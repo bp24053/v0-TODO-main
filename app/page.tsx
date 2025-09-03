@@ -53,14 +53,13 @@ export default function TodoApp() {
     return () => clearInterval(interval)
   }, [tasks])
 
-  const addTask = (title: string, parentId?: string, color?: string, reminder?: Date) => {
+  const addTask = (title: string, parentId?: string) => {
     const newTask: Task = {
       id: crypto.randomUUID(),
       title,
       completed: false,
-      color: color || "bg-primary",
+      color: "bg-primary",
       tags: [],
-      reminder,
       parentId,
       createdAt: new Date(),
     }
